@@ -11,7 +11,8 @@ O dataset utilizado é o **"Diabetes.arff"**, disponível na biblioteca `scipy`,
 - **diabetes.arff**: O arquivo de dados no formato `.arff` contendo os registros dos pacientes.
 - **MLP.py**: O script principal que executa o treinamento e teste da Rede Neural MLP, salvando os resultados e exibindo estatísticas de desempenho.
 - **resultados_experimentos.csv**: Arquivo de saída gerado pelo script contendo os resultados detalhados de cada execução.
-  
+- **graficos**: Pasta onde os gráficos gerados são salvos.
+
 ## Tecnologias Utilizadas
 
 - **Python 3.12**: Linguagem de programação utilizada no projeto.
@@ -20,25 +21,35 @@ O dataset utilizado é o **"Diabetes.arff"**, disponível na biblioteca `scipy`,
   - `pandas`: Manipulação de dados.
   - `scikit-learn`: Para normalização dos dados, criação do modelo MLP e cálculo de métricas.
   - `numpy`: Cálculos numéricos e manipulação de arrays.
-  
+  - `seaborn`: Para criação dos gráficos de matriz de confusão.
+  - `matplotlib`: Para salvar os gráficos.
+
 ## Como Executar
 
 1. **Pré-requisitos**:
    - Certifique-se de ter o Python 3.12 (ou superior) instalado.
    - Instale as dependências necessárias executando o comando:
 
-   instale as bibliotecas individualmente:
+   ```bash
+   pip install -r requirements.txt
+   ```
+
+   Ou, instale as bibliotecas individualmente:
 
    ```bash
-   pip install scipy pandas scikit-learn numpy
+   pip install scipy pandas scikit-learn numpy seaborn matplotlib
    ```
-   
+
+2. **Executar o Script**:
+   - Execute o script `MLP.py` para treinar e testar o modelo. O script realizará 30 execuções do treinamento e teste do modelo com diferentes combinações de parâmetros.
+
    ```bash
-   pip install matplotlib seaborn
-    ```
+   python MLP.py
+   ```
 
 3. **Resultados**:
-   O script executará 30 vezes o treinamento e teste do modelo com diferentes combinações de parâmetros, exibindo um resumo no terminal e salvando os resultados em um arquivo CSV (`resultados_experimentos.csv`).
+   - O script exibirá um resumo no terminal e salvará os resultados detalhados em um arquivo CSV (`resultados_experimentos.csv`).
+   - Gráficos das matrizes de confusão serão salvos na pasta `graficos`.
 
 ## Resultados Esperados
 
@@ -52,3 +63,4 @@ A performance é avaliada com base nas métricas:
 - **Erro Médio Quadrático (MSE)**: Quanto menor, melhor.
 - **Matriz de Confusão**: Avalia os acertos (verdadeiros positivos/negativos) e erros (falsos positivos/negativos) do modelo.
 
+Os gráficos gerados ajudam na visualização da matriz de confusão média para cada combinação de taxa de aprendizado e tamanho da camada escondida, permitindo uma melhor análise do desempenho do modelo.
