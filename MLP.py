@@ -28,7 +28,7 @@ X = scaler.fit_transform(X)
 
 # Definir os valores das taxas de aprendizado e número de neurônios na camada escondida
 learning_rates = [0.1, 0.01, 0.001]
-hidden_layer_sizes_list = [(3,), (5,), (7,)]
+hidden_layer_sizes_list = [(3), (5), (7)]
 
 # Armazenar os resultados
 results = []
@@ -92,6 +92,7 @@ for index, row in summary_stats.iterrows():
     print(f"[[{int(conf_matrix_mean[0, 0])}, {int(conf_matrix_mean[0, 1])}]")
     print(f" [ {int(conf_matrix_mean[1, 0])}, {int(conf_matrix_mean[1, 1])}]]")
 
-# resultados em um arquivo CSV
-results_df.to_csv("resultados_experimentos.csv", index=False, quoting=1)
- 
+caminho = r"C:\Users\Nayane Jacyara\Documents\Faculdade\sistemaInteligentes\Redes_Neurais\Rede_Neural_Multilayer_Perceptron\resultados_experimentos.csv"
+
+# Salvar o arquivo CSV no caminho especificado
+results_df.to_csv(caminho, index=False, quoting=1)
