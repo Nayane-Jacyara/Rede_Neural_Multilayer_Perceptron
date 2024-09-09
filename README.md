@@ -27,15 +27,15 @@ O dataset utilizado é o **"Diabetes.arff"**, disponível na biblioteca `scipy`,
    - Certifique-se de ter o Python 3.12 (ou superior) instalado.
    - Instale as dependências necessárias executando o comando:
 
-   ```bash
-   pip install -r requirements.txt
-   ```
-
-   Ou, instale as bibliotecas individualmente:
+   instale as bibliotecas individualmente:
 
    ```bash
    pip install scipy pandas scikit-learn numpy
    ```
+   
+   ```bash
+   pip install matplotlib seaborn
+    ```
 
 3. **Resultados**:
    O script executará 30 vezes o treinamento e teste do modelo com diferentes combinações de parâmetros, exibindo um resumo no terminal e salvando os resultados em um arquivo CSV (`resultados_experimentos.csv`).
